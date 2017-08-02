@@ -1,0 +1,43 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<style>
+    body,li,ul,a{
+        padding: 0;margin: 0;
+        text-decoration: none;
+        list-style: none;
+    }
+    .box-main{
+        margin: 0 auto;
+        padding-top: 100px;
+        width: 1200px;
+    }
+    .box-left{
+        float: left;
+        width: 60%;
+    }
+    .box-right{
+        float: right;
+        width: 40%;
+    }
+    .height-li{
+        height: 50px;
+        line-height: 50px;
+    }
+</style>
+<div class="box-main">
+    <div class="box-left">
+        <ul class="list-group">
+            {foreach $result as $v}
+            <li class="height-li"><a href="index.php?m=index&f=scon&a=show&id={$v['sid']}">{$v["stitle"]}</a></li>
+            <hr>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="box-right">
+
+    </div>
+
+</div>
+
+</body>
+</html>

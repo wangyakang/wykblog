@@ -1,0 +1,104 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<!--<link rel="stylesheet" href="{CSS_PATH}/mui.min.css">-->
+<!--<ul  style="width: 1000px">-->
+    <!--{foreach $result as $v}-->
+    <!--<li>-->
+        <!--&lt;!&ndash;<h1>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="index.php?m=index&f=scon&a=show&id={$v['sid']}">{$v["stitle"]}</a>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</h1>&ndash;&gt;-->
+        <!--<ul class="mui-table-view">-->
+            <!--<li class="mui-table-view-cell mui-media">-->
+                <!--<a href="javascript:;">-->
+                    <!--<img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">-->
+                    <!--<div class="mui-media-body">-->
+                        <!--<a href="index.php?m=index&f=scon&a=show&id={$v['sid']}">{$v["stitle"]}</a>-->
+                        <!--<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>-->
+                    <!--</div>-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</li>-->
+    <!--{/foreach}-->
+
+<!--</ul>-->
+<style>
+    .box-pad{
+        padding: 20px 0;
+    }
+    a{
+        padding: 0;
+    }
+</style>
+<div class="widewrapper main">
+    <div class="container box-pad">
+        <div class="row">
+            <div class="col-md-8 blog-main">
+                <div class="row">
+                    {foreach $result as $v}
+                    <div class="col-md-6 col-sm-6">
+                        <article class=" blog-teaser box">
+                            <header>
+                                <h3> <a href="index.php?m=index&f=scon&a=show&id={$v['sid']}">{$v["stitle"]}</a></h3>
+                                <span class="meta">{$v["stime"]}</span>
+                                <hr>
+                            </header>
+                            <div class="clearfix">
+                                分类：<span>{$v["cname"]}</span>
+                                <a href="index.php?m=index&f=scon&a=show&id={$v['sid']}" class="btn" style="color: #444; border: 1px solid #ddd;">更多</a>
+                            </div>
+                        </article>
+                    </div>
+                    {/foreach}
+                </div>
+                <!--{$pages}-->
+            </div>
+            <aside class="col-md-4 blog-aside">
+
+                <div class="aside-widget">
+                    <header>
+                        <h3>阅读排行</h3>
+                    </header>
+                    <div class="body">
+                        <ul class="clean-list">
+                            {foreach $result1 as $v}
+                                <li><a href="index.php?m=index&f=scon&a=show&id={$v['sid']}" style="padding: 0">{$v["stitle"]}</a> <span style="float: right;margin-right: 20px;font-size: 13px;color:#48535f;">点击量：{$v['hits']}</span></li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                </div>
+                <div class="aside-widget">
+                    <header>
+                        <h3>阅读分类</h3>
+                    </header>
+                    <div class="body clearfix">
+                        <ul class="tags">
+                            {foreach $resultRead as $v}
+                            <li><a href="index.php?m=index&f=index&a=fenlei&id={$v['cid']}">{$v["cname"]}</a></li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                </div>
+                <div class="aside-widget">
+                    <header>
+                        <h3>友情链接</h3>
+                    </header>
+                    <div class="body">
+                        <ul class="clean-list">
+                            <li><a href="http://www.imooc.com/">慕课网</a></li>
+                            <li><a href="http://www.bootcss.com/">bootstrap</a></li>
+                            <li><a href="http://www.cnblogs.com/">博客园</a></li>
+                            <li><a href="http://www.w3school.com.cn/">W3SCHOOL</a></li>
+                            <li><a href="http://www.runoob.com/">RUNOOB.COM</a></li>
+                            <li><a href="http://www.cnblogs.com/qshting/p/5304988.html">论坛、博客推荐</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

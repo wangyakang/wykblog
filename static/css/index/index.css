@@ -1,0 +1,92 @@
+body,a{
+    padding:0;margin:0;
+    color: #444;
+    text-decoration: none;
+    padding-top: 68px;
+}
+.top{
+    z-index: 1222;
+    width:100%;height:68px;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.top .content{
+    width:900px;height:100%;
+    margin:auto;
+    padding-top: 10px;
+}
+.top .content .left{
+     line-height: 44px;
+    float:left;
+}
+.top .content .right{
+    float:right; line-height: 44px;
+}
+.list-inline{
+    padding-right: 20px;
+    color: #444;
+}
+.box{
+    width: 286px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+}
+.body{
+    max-height: 400px;
+    overflow: hidden;
+}
+.aside-widget header {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+.aside-widget {
+    margin-bottom: 40px;
+    border: 1px solid #ddd;
+}
+.clean-list li::before {
+    content: "";
+    background-color: #444;
+    border-style: solid;
+    border-width: 4px 4px;
+    display: block;
+    width: 8px;
+    left: -20px;
+    top: 15px;
+    position: relative;
+}
+.clean-list {
+    list-style: none;
+}
+.aside-widget header h3 {
+    font-size: 24px;
+    padding: 10px 20px 3px 20px;
+    margin-top: 0;
+    color: #48535f;
+}
+.blog-teaser .btn {
+    float: right;
+}
+.blog-teaser .btn:hover,.tags li a:hover{
+    background: #f1f1f1;
+}
+.aside-widget .body {
+    margin: 10px 0;
+    padding: 5px;
+}
+.tags li a {
+    padding: 3px 15px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.tags li {
+    float: left;
+}
+.tags {
+    list-style: none;
+}

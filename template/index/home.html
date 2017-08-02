@@ -1,0 +1,162 @@
+{include file="index/header.html"}
+<link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+<!--<link rel="stylesheet" href="{CSS_PATH}/mui.min.css">-->
+<link rel="stylesheet" href="{CSS_PATH}/home.css">
+<script src="{JS_PATH}/jquery.min.js"></script>
+<script src="{JS_PATH}/ajax_upload.js"></script>
+<script src="{JS_PATH}/home.js"></script>
+<!--
+
+a.
+   skajdks      sid=10
+   dsakhdjksa
+                   id pid       sid
+   b.  b留言        1  0         10
+     c.  c回复b     c id  pid
+     b.  b回复c      5   1
+                    b id   pid
+                     10   5
+     a.  回复
+   c.  c留言         id   pid
+                     2    0
+      d. d回复
+
+
+
+
+  1.  留言是给谁留的  双方
+  2.  留言给哪一篇文章留的
+  3.  留言的时间
+  4.  留言之间的关系
+
+
+
+-->
+<div class="up-box">
+    <div class="shangchuan">
+        <div class="modal-header">
+            <div class="close" data-dismiss="modal">×</div>
+            <h4 class="modal-title" id="avatar-modal-label">Change Logo Picture</h4>
+        </div>
+        <div class="modal-body">
+            <div class="avatar-body">
+                <input type="hidden" value="" name="hidden" class="hidden">
+                <input class="tijiao btn col-md-9 file" id="avatarInput" name="file" multiple="multiple" type="file">
+                <div class="col-md-3">
+                    <button class="btn  baocun" type="submit" uid="{$uid}"> 保存修改</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="" alt="" class="avatar-wrapper aa">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="notice"></div>
+<div class="container main">
+    <div class="row">
+        <div class="col-sm-8 main-left">
+
+            <!--头像部分-->
+            <div class="container-fluid">
+                 <div class="row">
+                     <div class="col-sm-4 touxiang">+
+                         <img src="{$result[0]['photo']}" alt="" class="photo-head">
+                     </div>
+                      <div class="col-sm-2">
+                          关注数量 <span>{count($resultFoucu)}</span>
+                      </div>
+                     <div class="col-sm-2">
+                         粉丝数量 <span>{count($resultFans)}</span>
+                     </div>
+                     <div class="col-sm-2">
+                         文章数量 <span>{count($resultTiy)}</span>
+                     </div>
+                     <div class="col-sm-2">
+                         留言数量 <span>{count($resultLiuyan)}</span>
+                     </div>
+                 </div>
+            </div>
+
+            <hr>
+            <!--菜单部分-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        收藏的内容
+                    </div>
+                    <div class="col-sm-4">
+                        发表的内容
+                    </div>
+                    <div class="col-sm-4">
+                        xxx的内容
+                    </div>
+                </div>
+            </div>
+
+            <!--&lt;!&ndash;具体的内容&ndash;&gt;-->
+
+            <!--<ul class="mui-table-view">-->
+                <!--<li class="mui-table-view-cell mui-media">-->
+                    <!--<a href="javascript:;">-->
+                        <!--<img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">-->
+                        <!--<div class="mui-media-body">-->
+                            <!--幸福-->
+                            <!--<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="mui-table-view-cell mui-media">-->
+                    <!--<a href="javascript:;">-->
+                        <!--<img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">-->
+                        <!--<div class="mui-media-body">-->
+                            <!--木屋-->
+                            <!--<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li class="mui-table-view-cell mui-media">-->
+                    <!--<a href="javascript:;">-->
+                        <!--<img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">-->
+                        <!--<div class="mui-media-body">-->
+                            <!--CBD-->
+                            <!--<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+
+        <!--</div>-->
+        <!--<div class="col-sm-4 main-right">-->
+            <!--<div class="list-group">-->
+                <!--<a href="#" class="list-group-item active">-->
+                    <!--浏览排行榜-->
+                <!--</a>-->
+                <!--<a href="#" class="list-group-item">Dapibus ac facilisis in</a>-->
+                <!--<a href="#" class="list-group-item">Morbi leo risus</a>-->
+                <!--<a href="#" class="list-group-item">Porta ac consectetur ac</a>-->
+                <!--<a href="#" class="list-group-item">Vestibulum at eros</a>-->
+            <!--</div>-->
+
+
+            <!--<div class="list-group">-->
+                <!--<a href="#" class="list-group-item active">-->
+                    <!--关注排行榜-->
+                <!--</a>-->
+                <!--<a href="#" class="list-group-item">Dapibus ac facilisis in</a>-->
+                <!--<a href="#" class="list-group-item">Morbi leo risus</a>-->
+                <!--<a href="#" class="list-group-item">Porta ac consectetur ac</a>-->
+                <!--<a href="#" class="list-group-item">Vestibulum at eros</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+</script>
+</html>
